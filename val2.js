@@ -13,7 +13,7 @@ let validFname = false;
 let validLname = false;
 let validPhone = false;
 let validAddress1 = false;
-let validCheckbox=false;
+let validCheckbox = false;
 $('#failure').hide();
 $('#success').hide();
 
@@ -100,10 +100,10 @@ address1.addEventListener('blur', () => {
     }
 })
 const box = document.getElementById('invalidCheck');
-box.addEventListener('click',()=>{
+box.addEventListener('click', () => {
     // let val=box.value;
     // console.log("Checnkbox state cheanged"+box.checked);
-    validCheckbox=box.checked;
+    validCheckbox = box.checked;
 });
 
 let submit = document.getElementById('submit');
@@ -125,14 +125,14 @@ submit.addEventListener('click', (e) => {
     }
     else {
         console.log('One of the field not valid.Hence can not submit.Please verify and try again');
-        if(!validCheckbox){
-            alert("Please agree terms and conditions");
+        if (!validCheckbox) {
+            alert("Please fill the following details and agree terms&conditions");
         }
 
         let failure = document.getElementById('failure');
         failure.classList.add('show');
         // success.classList.remove('show');
-        $('#success').hide();
+        $('#success').hide(); 
         $('#failure').show();
     }
 

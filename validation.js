@@ -1,20 +1,32 @@
-// console.log("Validating Form")
-function validateForm() {
-    var country = document.getElementById('country').value;
-    var state = document.getElementById('state').value;
-    var city = document.getElementById('city').value;
-    var checkout = document.getElementById('checkbox').value;
-    if (country == "") {
-        document.getElementById('usercountry').innerHTML = "*Please enter Country"
-        return false;
+function validate(selector){
+    const firstname=selector.value;
+    let validFname = false;
+    let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
+    if(regex.test(firstname===false)){
+        console.log('Your fname is valid');
+        fname.classList.remove('is-invalid');
+        validFname = true;
     }
-    if (state == "") {
-        document.getElementById('userstate').innerHTML = "*Please enter State"
-        return false;
-    }
-    if (city == "") {
-        document.getElementById('usercity').innerHTML = "*Please enter City"
-        return false;
-    }
-    console.log(checkout)
 }
+// var firstname=/^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
+
+
+// function validate(form){
+//     var firstname=getElementById('fname').value;
+// }
+
+// let submit = document.getElementById('submit');
+// submit.addEventListener('click', (e) => {
+//     e.preventDefault();
+
+//     console.log('you clicked on submit');
+
+//     if(!firstname.test(fname)){
+//         errors[errors.length] = "not valid Name .";
+//     }
+
+// })
+
+// function error(errors){
+//     var msg="please enter valid data"
+// }
