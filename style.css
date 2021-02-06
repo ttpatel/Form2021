@@ -1,3 +1,4 @@
+
 .container {
     border: 2px solid black;
     border-radius: 9px;
@@ -18,21 +19,21 @@
     border: 2px solid black;
     border-radius: 9px;
     }
+   
+    input{
+        box-shadow: none!important;
 
-    /* input:invalid {
-        border-color: 2px solid red;
-      }
-
-      input:invalid + span::before{
-          content: "";
-          color: red;
-      }
-      input:invalid + span::after{
-          content: "";
-          color: green;
-      } */
-
-      .form-control:invalid {
-        border-color: red;
-        background-color: #ffdddd
     }
+
+    input:active,input:focus{
+        border: none!important;
+    }
+    select{
+        box-shadow: none!important;
+
+    }
+
+    select:active,select:focus{
+        border: none!important;
+    }
+  
