@@ -1,13 +1,41 @@
-function validate(selector){
-    const firstname=selector.value;
-    let validFname = false;
-    let regex = /^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
-    if(regex.test(firstname===false)){
-        console.log('Your fname is valid');
-        fname.classList.remove('is-invalid');
-        validFname = true;
+function validate(selector, regex){
+    if(regex.test(selector.value)){
+        return true;
     }
+    return false;
 }
+
+function checkIfIsInvalid(selector) {
+    selector.addEventListener('keyup',(e) => {
+        const regex = /^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
+        if (validate(selector, regex))  {
+            selector.classList.remove('is-invalid');
+        }
+    })
+}
+
+
+document.getElementById('submit').addEventListener('click',(e) =>{
+    console.log('onSubmit');
+    e.preventDefault();
+    const firstName = document.getElementById('fname');
+    
+    const lastName = document.getElementById('lname');
+    
+    const regex = /^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
+    if (!validate(firstName, regex)) {
+        firstName.classList.add('is-invalid');
+        checkIfIsInvalid(firstName);
+    }
+    if (!validate(lastName, regex)) {
+        lastName.classList.add('is-invalid');
+        checkIfIsInvalid(lastName);
+    }
+});
+
+
+
+
 // var firstname=/^[a-zA-Z]([0-9a-zA-Z]){2,10}$/;
 
 
