@@ -22,10 +22,11 @@
    
     input{
         box-shadow: none!important;
+        border-color: black!important;
 
     }
 
-    input:active,input:focus{
+    /* input:active,input:focus{
         border: none!important;
     }
     select{
@@ -36,4 +37,4 @@
     select:active,select:focus{
         border: none!important;
     }
-  
+   */
