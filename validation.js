@@ -1,6 +1,7 @@
 function validate(selector, regex) {
-    console.log(selector.value)
+    // console.log(selector.value)
     if (regex.test(selector.value)) {
+        console.log(selector.value);
         return true;
     }
     return false;
@@ -9,7 +10,7 @@ function checkIfIsInvalid(selector, regex,onEvent) {
     selector.addEventListener(onEvent, (e) => {
 
         if (validate(selector, regex)) {
-            console.log(selector.value)
+            //console.log(selector.value)
             selector.classList.remove('is-invalid');
         }
 
@@ -32,8 +33,8 @@ document.getElementById('submit').addEventListener('click', (e) => {
         const emailRegex = document.getElementById('email');
         const mobileNumber = document.getElementById('phone');
         const userAddress = document.getElementById('address1');
-        const userGender = document.getElementsByName('gender');
-        // console.log(userGender.value);
+        const userGender1 = document.getElementById('gender1');
+        const userGender2 = document.getElementById('gender2');
         const userCheck = document.getElementById('invalidCheck');
         //const form = document.getElementById('forms');
 
@@ -43,8 +44,9 @@ document.getElementById('submit').addEventListener('click', (e) => {
         const regex1 = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z ]){0,3}$/;
         const regex2 = /^([0-9]){10}$/;
         const regex3 = /^[\s_\-\.\,\""\&0-9a-zA-Z]([\s_\-\.\,\""\&0-9a-zA-Z]){2,100}$/;
-        const regex4 = /^(Male|Female)$/;
+        const regex4 = /([2-3])/;
         const regex5 = / /;
+        var userGender='4';
         if (!validate(firstName, regex)) {
             firstName.classList.add('is-invalid');
             checkIfIsInvalid(firstName, regex,'keyup');
@@ -65,10 +67,12 @@ document.getElementById('submit').addEventListener('click', (e) => {
             userAddress.classList.add('is-invalid');
             checkIfIsInvalid(userAddress, regex3,'keyup');
         }
-        if (!validate(userGender.regex4)) {
-            userGender.classList.add('is-invalid');
-            checkIfIsInvalid(userGender, regex4,'change');
-            // console.log("");
+        if(userGender1.checked==true){ userGender=document.getElementById('gender1');}
+        if(userGender2.checked==true) {userGender=document.getElementById('gender2');}
+
+        if (!validate(userGender, regex4)) {
+            userGender2.classList.add('is-invalid');
+            checkIfIsInvalid(userGender2, regex4,'change');
         }
         if (!validate(userCheck, regex5)) {
             userCheck.classList.add('is-invalid');
