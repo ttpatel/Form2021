@@ -22,19 +22,22 @@
    
     input{
         box-shadow: none!important;
-        border-color: black!important;
+        /* border-color: black!important; */
 
     }
 
-    /* input:active,input:focus{
-        border: none!important;
+    input:active,input:focus{
+        /* border: none!important; */
+        border-color: black!important;
     }
     select{
         box-shadow: none!important;
+        border-color: black;
 
     }
 
     select:active,select:focus{
-        border: none!important;
+        /* border: none!important; */
+        border-color: black!important;
     }
-   */
+   
